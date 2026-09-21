@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafa Kheiza Fathan - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1e3a8a', // Deep Blue (Tech/Engineering feel)
+                        secondary: '#3b82f6', // Light Blue
+                        accent: '#f59e0b', // Amber/Orange accent
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .timeline-dot {
+            position: absolute;
+            left: -0.4rem;
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            border: 2px solid white;
+        }
+        @media (min-width: 768px) {
+            .timeline-dot-md-right {
+                left: auto;
+                right: -0.5rem;
+            }
+            .timeline-dot-md-left {
+                left: -0.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-primary selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-bold text-xl text-primary tracking-tight">
+                    Rafa<span class="text-secondary">.</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Home</a>
+                        <a href="#about" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
+                        <a href="#skills" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
+                        <a href="#project" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Project</a>
+                        <a href="#experience" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Experience</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-500 hover:text-slate-800 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50">Home</a>
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50">Skills</a>
+                <a href="#project" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50">Project</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50">Experience</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-28 pb-20 md:pt-40 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-3/5 space-y-6 text-center md:text-left">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-primary text-sm font-semibold tracking-wide">
+                Chemical Engineering Student
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight text-slate-900">
+                Hi, I'm <span class="text-primary">Rafa Kheiza Fathan</span>
+            </h1>
+            <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto md:mx-0">
+                Final-year Chemical Engineering student at Gadjah Mada University. Bridging the gap between 
+                <span class="font-semibold text-slate-800">Process Engineering</span> and 
+                <span class="font-semibold text-slate-800">Data Science</span> to optimize engineering workflows.
+            </p>
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
+                <a href="#contact" class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-blue-800 transition-colors shadow-lg shadow-blue-900/20">
+                    <i class="far fa-envelope mr-2"></i> Contact Me
+                </a>
+                <a href="#project" class="px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-lg font-medium hover:bg-slate-50 transition-colors shadow-sm">
+                    <i class="fas fa-code mr-2"></i> View Projects
+                </a>
+            </div>
+            <div class="flex items-center justify-center md:justify-start gap-4 pt-6 text-slate-500">
+                <a href="mailto:rafa.kheiza@gmail.com" class="hover:text-primary transition-colors text-2xl"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/6281287808432" target="_blank" class="hover:text-green-600 transition-colors text-2xl"><i class="fab fa-whatsapp"></i></a>
+                <span class="text-sm"><i class="fas fa-map-marker-alt mr-1"></i> Sleman, D.I. Yogyakarta</span>
+            </div>
+        </div>
+        <div class="md:w-2/5 flex justify-center">
+            <!-- Decorative abstract element representing Chemical Engineering & Data -->
+            <div class="relative w-72 h-72 md:w-96 md:h-96">
+                <div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full opacity-20 blur-2xl animate-pulse"></div>
+                <div class="absolute inset-4 bg-white rounded-3xl shadow-xl overflow-hidden flex items-center justify-center border border-slate-100 rotate-3 transition-transform hover:rotate-0 duration-500">
+                    <div class="text-center p-6 text-primary/10">
+                        <i class="fas fa-flask text-8xl mb-4 opacity-50 block"></i>
+                        <i class="fas fa-chart-network text-6xl opacity-50 block -mt-8 ml-12"></i>
+                    </div>
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Education Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Personal Summary -->
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6 relative inline-block">
+                        Personal Summary
+                        <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-secondary rounded-full"></span>
+                    </h2>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        I am a Final-year Chemical Engineering student at Gadjah Mada University with core interests in <strong class="text-slate-800">particulate processing, minerals, ceramics technology, and the energy sector</strong>. 
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-6">
+                        Adaptable and results-driven, I possess a unique capability to leverage <strong class="text-slate-800">data science to optimize process engineering workflows</strong>. I have a proven track record of developing both technical expertise and managerial leadership through professional certifications, projects, and active involvement in university organizations.
+                    </p>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6 relative inline-block">
+                        Education
+                        <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-secondary rounded-full"></span>
+                    </h2>
+                    <div class="space-y-6">
+                        <!-- UGM -->
+                        <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-900">Gadjah Mada University</h3>
+                                <span class="px-3 py-1 bg-white border border-slate-200 text-xs font-semibold rounded-full text-slate-600">2023 - Present</span>
+                            </div>
+                            <p class="text-primary font-medium mb-2">Bachelor of Chemical Engineering</p>
+                            <p class="text-slate-500 text-sm"><i class="fas fa-university mr-2"></i>Faculty of Engineering (FT UGM)</p>
+                        </div>
+
+                        <!-- High School -->
+                        <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+                            <div class="absolute top-0 left-0 w-1 h-full bg-slate-300"></div>
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-slate-900">MAN 1 Tangerang Selatan</h3>
+                                <span class="px-3 py-1 bg-white border border-slate-200 text-xs font-semibold rounded-full text-slate-600">2020 - 2023</span>
+                            </div>
+                            <p class="text-slate-700 font-medium mb-2">Science Major</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Technical & Soft Skills</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Hard Skills -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-primary mb-6 text-xl">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-6">Engineering & Data</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <i class="fab fa-python text-slate-400 mr-3 text-lg w-6 text-center"></i>
+                            <span class="text-slate-700 font-medium">Python Programming</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-chart-pie text-slate-400 mr-3 text-lg w-6 text-center"></i>
+                            <span class="text-slate-700 font-medium">Data Analysis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-industry text-slate-400 mr-3 text-lg w-6 text-center"></i>
+                            <span class="text-slate-700 font-medium">ASPEN Plus & Hysys</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-project-diagram text-slate-400 mr-3 text-lg w-6 text-center"></i>
+                            <span class="text-slate-700 font-medium">Process Simulation (OTS)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tools & Software -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+                    <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-accent mb-6 text-xl">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-6">Tools & Design</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <i class="fas fa-file-excel text-slate-400 mr-3 text-lg w-6 text-center"></i>
+                            <span class="text-slate-700 font-medium">Microsoft Excel</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-file-word text-slate-400 mr-3 text-lg w-6 text-center"></i>
+                            <span class="text-slate-700 font-medium">Microsoft Word & PowerPoint</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-paint-brush text-slate-400 mr-3 text-lg w-6 text-center"></i>
+                            <span class="text-slate-700 font-medium">Graphic Design</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-network-wired text-slate-400 mr-3 text-lg w-6 text-center"></i>
+                            <span class="text-slate-700 font-medium">OPC-UA / MQTT (SCADA)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Certifications & Soft Skills -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6 text-xl">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-6">Certifications & Soft Skills</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-award text-slate-400 mr-3 mt-1 text-lg w-6 text-center"></i>
+                            <div>
+                                <span class="text-slate-700 font-medium block">Fundamental of Data Analysis</span>
+                                <span class="text-xs text-slate-500">IBM Skills Build Certified</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-award text-slate-400 mr-3 mt-1 text-lg w-6 text-center"></i>
+                            <div>
+                                <span class="text-slate-700 font-medium block">Leadership Certified</span>
+                                <span class="text-xs text-slate-500">Ditmawa UGM & Kapal Api X Malaka</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center mt-4">
+                            <i class="fas fa-users text-slate-400 mr-3 text-lg w-6 text-center"></i>
+                            <span class="text-slate-700 font-medium">Managerial Leadership</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-comments text-slate-400 mr-3 text-lg w-6 text-center"></i>
+                            <span class="text-slate-700 font-medium">Adaptability & Teamwork</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Project Section -->
+    <section id="project" class="py-20 bg-primary relative overflow-hidden">
+        <!-- Background accents -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-white opacity-5 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-secondary opacity-20 blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12">
+                <span class="text-secondary font-semibold tracking-wider uppercase text-sm mb-2 block">Featured Experience</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Project Highlight</h2>
+                <div class="w-20 h-1 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-full md:w-2/3">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="px-3 py-1 bg-blue-100 text-primary text-xs font-bold rounded-md">Python</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-md">Simulation</span>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4 leading-tight">
+                            Python-Based Operator Training Simulator (OTS) for Ammonia Plant Front-End
+                        </h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            Developing a modular, physics-based Operator Training Simulator in Python for the KBR Purifier™ front-end of an ammonia plant (2000 MTPD NH3). Supervised by Prof. Ir. Muslikhin Hidayat, ST, MT, PhD., IPU.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-slate-700">
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span><strong>Real-gas thermodynamics</strong> (RK equation of state)</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span><strong>Numerical Integration</strong> using RK4 method</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span><strong>ISA-18.2</strong> alarm management implementation</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span><strong>OPC-UA/MQTT</strong> SCADA tag architecture</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/3 bg-slate-50 rounded-2xl p-6 border border-slate-100 flex flex-col justify-center">
+                        <h4 class="font-semibold text-slate-900 mb-3 border-b pb-2">Process Units Modeled:</h4>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li><i class="fas fa-cog text-primary/50 mr-2"></i> Feed Gas Compressor</li>
+                            <li><i class="fas fa-cog text-primary/50 mr-2"></i> Knock-Out (KO) Drum</li>
+                            <li><i class="fas fa-cog text-primary/50 mr-2"></i> Hydrotreater</li>
+                            <li><i class="fas fa-cog text-primary/50 mr-2"></i> Desulfurizer</li>
+                            <li><i class="fas fa-cog text-primary/50 mr-2"></i> High-Temp Shift Converter</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience & Volunteer Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Experience & Organizations</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Left Column: Work & Volunteer -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+                        <i class="fas fa-briefcase text-primary mr-3"></i> Professional & Volunteer
+                    </h3>
+                    
+                    <div class="relative pl-6 border-l-2 border-slate-200 space-y-10">
+                        
+                        <!-- Volunteer KKN -->
+                        <div class="relative">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-white border border-slate-100 rounded-xl p-5 shadow-sm hover:shadow-md transition">
+                                <span class="text-xs font-bold text-primary uppercase tracking-wider">Jun 2026 - Aug 2026</span>
+                                <h4 class="text-lg font-bold text-slate-900 mt-1">Sub-Unit Student Coordinator</h4>
+                                <p class="text-sm text-slate-500 font-medium mb-3">Community Service Program (KKN-PPM UGM 2026)</p>
+                                <ul class="text-sm text-slate-600 space-y-2 list-disc ml-4">
+                                    <li>Led a multidisciplinary team of 8 students to design/execute community programs in Sleman.</li>
+                                    <li>Managed project timelines and coordinated with local authorities (RT, RW, Padukuhan).</li>
+                                    <li>Spearheaded fertilizer optimization, mini chem-eng projects, water filtration for heavy metals, and groundwater mapping.</li>
+                                    <li>Ensured 100% program completion solving logistical on-site challenges.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Work: Masjid Graphic Designer -->
+                        <div class="relative">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-white border border-slate-100 rounded-xl p-5 shadow-sm hover:shadow-md transition">
+                                <span class="text-xs font-bold text-primary uppercase tracking-wider">Feb 2026 - Present</span>
+                                <h4 class="text-lg font-bold text-slate-900 mt-1">Graphic Designer (Poster Designer)</h4>
+                                <p class="text-sm text-slate-500 font-medium mb-3">Masjid Pogung Baru</p>
+                            </div>
+                        </div>
+
+                        <!-- Work: Mosque Takmir -->
+                        <div class="relative">
+                            <div class="timeline-dot"></div>
+                            <div class="bg-white border border-slate-100 rounded-xl p-5 shadow-sm hover:shadow-md transition">
+                                <span class="text-xs font-bold text-primary uppercase tracking-wider">Jun 2025 - Present</span>
+                                <h4 class="text-lg font-bold text-slate-900 mt-1">Mosque Takmir</h4>
+                                <p class="text-sm text-slate-500 font-medium mb-3">Masjid Pogung Baru</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Column: Organization -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-8 flex items-center">
+                        <i class="fas fa-sitemap text-primary mr-3"></i> Organizations
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        
+                        <!-- FKIM -->
+                        <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 shadow-sm">
+                            <h4 class="text-lg font-bold text-slate-900 mb-1">Forum Kajian Islam Mahasiswa (FKIM)</h4>
+                            <div class="space-y-3 mt-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-chevron-right text-secondary text-xs mt-1.5 mr-2"></i>
+                                    <div>
+                                        <p class="text-sm font-semibold text-slate-800">General Chairman (President)</p>
+                                        <p class="text-xs text-slate-500">Oct 2025 - Present</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-chevron-right text-slate-400 text-xs mt-1.5 mr-2"></i>
+                                    <div>
+                                        <p class="text-sm font-medium text-slate-700">Head of Strategic Studies Division</p>
+                                        <p class="text-xs text-slate-500">Aug 2025 - Oct 2025</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-chevron-right text-slate-400 text-xs mt-1.5 mr-2"></i>
+                                    <div>
+                                        <p class="text-sm font-medium text-slate-700">Admin. Secretary & Staff Roles</p>
+                                        <p class="text-xs text-slate-500">Oct 2024 - Oct 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- KMT FT UGM -->
+                        <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 shadow-sm">
+                            <h4 class="text-lg font-bold text-slate-900 mb-1">Keluarga Muslim Teknik (KMT) FT UGM</h4>
+                            <div class="space-y-3 mt-4">
+                                <div class="flex items-start">
+                                    <i class="fas fa-chevron-right text-secondary text-xs mt-1.5 mr-2"></i>
+                                    <div>
+                                        <p class="text-sm font-semibold text-slate-800">Head of Mentoring & Al-Qur'an Management</p>
+                                        <p class="text-xs text-slate-500">Dec 2024 - Dec 2025</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-chevron-right text-slate-400 text-xs mt-1.5 mr-2"></i>
+                                    <div>
+                                        <p class="text-sm font-medium text-slate-700">Logistic Deputy Coord (Islamic Tech Fest)</p>
+                                        <p class="text-xs text-slate-500">Jul 2024 - Nov 2024</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-chevron-right text-slate-400 text-xs mt-1.5 mr-2"></i>
+                                    <div>
+                                        <p class="text-sm font-medium text-slate-700">Junior Staff of Muslim Center Division</p>
+                                        <p class="text-xs text-slate-500">Oct 2023 - Dec 2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SPE UGM & Chem Eng Dept -->
+                        <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 shadow-sm">
+                            <h4 class="text-lg font-bold text-slate-900 mb-4">Other Memberships</h4>
+                            <ul class="space-y-4">
+                                <li>
+                                    <p class="text-sm font-semibold text-slate-800">Society of Petroleum Engineer UGM SC</p>
+                                    <p class="text-xs text-slate-600">Staff of Competency Dev (May '24 - Dec '25) & Event Coord (Oct '24 - Nov '24)</p>
+                                </li>
+                                <li class="pt-2 border-t border-slate-200">
+                                    <p class="text-sm font-semibold text-slate-800">Chemical Eng. Department, UGM</p>
+                                    <p class="text-xs text-slate-600">Student Orientation Group Leader (Aug '23 - Nov '23)</p>
+                                </li>
+                                <li class="pt-2 border-t border-slate-200">
+                                    <p class="text-sm font-semibold text-slate-800">Guest Speaker - MOTION 11</p>
+                                    <p class="text-xs text-slate-600">MAN 1 Tangerang Selatan (Jan 2024)</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-slate-900 text-white pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-12 border-b border-slate-800 pb-12">
+                
+                <div class="text-center md:text-left">
+                    <h2 class="text-2xl font-bold mb-4">Rafa Kheiza Fathan</h2>
+                    <p class="text-slate-400 max-w-sm">
+                        Chemical Engineering Student passionate about process optimization, data science, and leadership.
+                    </p>
+                </div>
+
+                <div class="text-center md:text-right">
+                    <h3 class="text-lg font-semibold mb-4 text-white">Get In Touch</h3>
+                    <div class="space-y-2 text-slate-300">
+                        <p><i class="fas fa-envelope w-6 text-center text-slate-500"></i> <a href="mailto:rafa.kheiza@gmail.com" class="hover:text-white transition">rafa.kheiza@gmail.com</a></p>
+                        <p><i class="fab fa-whatsapp w-6 text-center text-slate-500"></i> <a href="https://wa.me/6281287808432" target="_blank" class="hover:text-white transition">0812-8780-8432</a></p>
+                        <p><i class="fas fa-map-marker-alt w-6 text-center text-slate-500"></i> Pogung Baru, Sleman, DIY</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center text-slate-500 text-sm flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2026 Rafa Kheiza Fathan. All rights reserved.</p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white mx-2 transition"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="#" class="hover:text-white mx-2 transition"><i class="fab fa-github text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                if(menu.classList.contains('hidden')){
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+
+            // Close mobile menu when a link is clicked
+            const mobileLinks = menu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
