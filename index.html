@@ -43,6 +43,8 @@
                 left: -0.5rem;
             }
         }
+        /* Keeps anchored sections clear of the fixed navbar */
+        section[id] { scroll-margin-top: 4rem; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-primary selection:text-white">
@@ -60,11 +62,12 @@
                         <a href="#about" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">About</a>
                         <a href="#skills" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
                         <a href="#project" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Project</a>
+                        <a href="#community" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Community Service</a>
                         <a href="#experience" class="hover:text-secondary px-3 py-2 rounded-md text-sm font-medium transition-colors">Experience</a>
                     </div>
                 </div>
                 <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="text-slate-500 hover:text-slate-800 focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-slate-500 hover:text-slate-800 focus:outline-none" aria-label="Toggle menu">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -77,6 +80,7 @@
                 <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50">About</a>
                 <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50">Skills</a>
                 <a href="#project" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50">Project</a>
+                <a href="#community" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50">Community Service</a>
                 <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-50">Experience</a>
             </div>
         </div>
@@ -86,18 +90,18 @@
     <section id="home" class="pt-28 pb-20 md:pt-40 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
         <div class="md:w-3/5 space-y-6 text-center md:text-left">
             <div class="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-primary text-sm font-semibold tracking-wide">
-                Chemical Engineering Student at Universitas Gadjah Mada
+                Chemical Engineering Student
             </div>
             <h1 class="text-4xl md:text-6xl font-bold leading-tight text-slate-900">
-                Hi, I am <span class="text-primary"> <br>Rafa Kheiza Fathan</span>
+                Hi, I'm <span class="text-primary">Rafa Kheiza Fathan</span>
             </h1>
             <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto md:mx-0">
-                Final-year Chemical Engineering student at Universitas Gadjah Mada. <br>Bridging the gap between 
+                Final-year Chemical Engineering student at Gadjah Mada University. Bridging the gap between 
                 <span class="font-semibold text-slate-800">Process Engineering</span> and 
-                <span class="font-semibold text-slate-800">Data Science</span> <br>to optimize engineering workflows.
+                <span class="font-semibold text-slate-800">Data Science</span> to optimize engineering workflows.
             </p>
             <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
-                <a href="#contact" class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-blue-1000 transition-colors shadow-lg shadow-blue-900/20">
+                <a href="#contact" class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-blue-800 transition-colors shadow-lg shadow-blue-900/20">
                     <i class="far fa-envelope mr-2"></i> Contact Me
                 </a>
                 <a href="#project" class="px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-lg font-medium hover:bg-slate-50 transition-colors shadow-sm">
@@ -111,16 +115,13 @@
             </div>
         </div>
         <div class="md:w-2/5 flex justify-center">
-            
-            <!-- Decorative abstract element representing Chemical Engineering & Data -->
+            <!-- Profile photo -->
             <div class="relative w-72 h-72 md:w-96 md:h-96">
-                <div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full opacity-80 blur-2xl animate-pulse"></div>
-                <div class="absolute inset-4 bg-white rounded-3xl shadow-xl overflow-hidden flex items-center justify-center border border-slate-100 rotate-3 transition-transform hover:rotate-0 duration-5">
-                    <div class="text-center p-6 text-primary/10">
-                        <i class="fas fa-flask text-8xl mb-4 opacity-50 block"></i>
-                        <i class="fas fa-chart-network text-6xl opacity-10000 block -mt-8 ml-12"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5"></div>
+                <div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full opacity-20 blur-2xl animate-pulse"></div>
+                <div class="absolute inset-4 bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 rotate-3 transition-transform hover:rotate-0 duration-500">
+                    <!-- PROFILE PHOTO: replace the path below if you rename or move the file -->
+                    <img src="images/profile.jpg" alt="Portrait of Rafa Kheiza Fathan in a Gadjah Mada University alumni-style blazer in front of the Faculty of Engineering building" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary/10 pointer-events-none"></div>
                 </div>
             </div>
         </div>
@@ -138,7 +139,7 @@
                         <span class="absolute bottom-0 left-0 w-1/2 h-1 bg-secondary rounded-full"></span>
                     </h2>
                     <p class="text-slate-600 leading-relaxed mb-6">
-                        I am a Final-year Chemical Engineering student at Universitas Gadjah Mada with core interests in <strong class="text-slate-800">particulate processing, minerals, ceramics technology, and the energy sector</strong>. 
+                        I am a Final-year Chemical Engineering student at Gadjah Mada University with core interests in <strong class="text-slate-800">particulate processing, minerals, ceramics technology, and the energy sector</strong>. 
                     </p>
                     <p class="text-slate-600 leading-relaxed mb-6">
                         Adaptable and results-driven, I possess a unique capability to leverage <strong class="text-slate-800">data science to optimize process engineering workflows</strong>. I have a proven track record of developing both technical expertise and managerial leadership through professional certifications, projects, and active involvement in university organizations.
@@ -156,7 +157,7 @@
                         <div class="bg-slate-50 rounded-xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
                             <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold text-slate-900">Universitas Gadjah Mada</h3>
+                                <h3 class="text-xl font-bold text-slate-900">Gadjah Mada University</h3>
                                 <span class="px-3 py-1 bg-white border border-slate-200 text-xs font-semibold rounded-full text-slate-600">2023 - Present</span>
                             </div>
                             <p class="text-primary font-medium mb-2">Bachelor of Chemical Engineering</p>
@@ -205,7 +206,7 @@
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-industry text-slate-400 mr-3 text-lg w-6 text-center"></i>
-                            <span class="text-slate-700 font-medium">ASPEN Plus</span>
+                            <span class="text-slate-700 font-medium">ASPEN Plus & Hysys</span>
                         </li>
                         <li class="flex items-center">
                             <i class="fas fa-project-diagram text-slate-400 mr-3 text-lg w-6 text-center"></i>
@@ -247,7 +248,6 @@
                     </div>
                     <h3 class="text-xl font-bold text-slate-900 mb-6">Certifications & Soft Skills</h3>
                     <ul class="space-y-4">
-                        
                         <li class="flex items-start">
                             <i class="fas fa-award text-slate-400 mr-3 mt-1 text-lg w-6 text-center"></i>
                             <div>
@@ -255,7 +255,6 @@
                                 <span class="text-xs text-slate-500">IBM Skills Build Certified</span>
                             </div>
                         </li>
-                        
                         <li class="flex items-start">
                             <i class="fas fa-award text-slate-400 mr-3 mt-1 text-lg w-6 text-center"></i>
                             <div>
@@ -263,23 +262,14 @@
                                 <span class="text-xs text-slate-500">Ditmawa UGM & Kapal Api X Malaka</span>
                             </div>
                         </li>
-                        
                         <li class="flex items-center mt-4">
                             <i class="fas fa-users text-slate-400 mr-3 text-lg w-6 text-center"></i>
-                            <div>
-                                <span class="text-slate-700 font-medium">Managerial Leadership,</span>
-                                <br><span class="text-slate-700 font-medium">Adaptability and Teamwork</span>
-                            <div>
+                            <span class="text-slate-700 font-medium">Managerial Leadership</span>
                         </li>
-                                
                         <li class="flex items-center">
                             <i class="fas fa-comments text-slate-400 mr-3 text-lg w-6 text-center"></i>
-                            <div>
-                                <span class="text-slate-700 font-medium">Story Teller</span>
-                                <br><span class="text-xs text-slate-500">PP UGM Certified</span>
-                            <div>
+                            <span class="text-slate-700 font-medium">Adaptability & Teamwork</span>
                         </li>
-                                
                     </ul>
                 </div>
             </div>
@@ -346,6 +336,181 @@
         </div>
     </section>
 
+    <!-- ===================== COMMUNITY SERVICE (KKN) SECTION ===================== -->
+    <section id="community" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section heading -->
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Community Service & Field Experience</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto rounded-full"></div>
+                <p class="text-slate-600 leading-relaxed max-w-2xl mx-auto mt-6">
+                    Community Service Program (KKN-PPM UGM 2026): applying engineering fundamentals and community leadership to real needs in Kaliduren 2, Moyudan, Sleman.
+                </p>
+            </div>
+
+            <!-- Quick facts -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+                <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm flex items-start gap-3">
+                    <i class="fas fa-map-marker-alt text-secondary mt-1"></i>
+                    <div>
+                        <p class="text-xs text-slate-500">Location</p>
+                        <p class="text-sm font-semibold text-slate-800">Kaliduren 2, Moyudan, Sleman</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm flex items-start gap-3">
+                    <i class="far fa-calendar-alt text-secondary mt-1"></i>
+                    <div>
+                        <p class="text-xs text-slate-500">Period</p>
+                        <p class="text-sm font-semibold text-slate-800">Jun 2026 - Aug 2026</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm flex items-start gap-3">
+                    <i class="fas fa-user-tie text-secondary mt-1"></i>
+                    <div>
+                        <p class="text-xs text-slate-500">Role</p>
+                        <p class="text-sm font-semibold text-slate-800">Sub-Unit Student Coordinator</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl p-5 border border-slate-100 shadow-sm flex items-start gap-3">
+                    <i class="fas fa-users text-secondary mt-1"></i>
+                    <div>
+                        <p class="text-xs text-slate-500">Team</p>
+                        <p class="text-sm font-semibold text-slate-800">Multidisciplinary team of 8 students</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============ Category 1: Technical & Environmental Engineering ============ -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch mb-16">
+
+                <!-- Description card -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 relative overflow-hidden">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-primary"></div>
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-primary mb-6 text-xl">
+                        <i class="fas fa-droplet"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-6">Technical & Environmental Engineering</h3>
+                    <ul class="space-y-4 text-sm text-slate-700 leading-relaxed">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Conducted <strong>groundwater potential exploration</strong> to secure sustainable clean water resources for the Kaliduren 2 residential area.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Designed and implemented an <strong>integrated underground water filtration system</strong> to enhance local clean water quality.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Initiated the <strong>"Mini ChemEng Project"</strong> to introduce elementary school students to basic science and chemical engineering concepts.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Delivered public socialization on <strong>optimizing organic fertilizer (<em>pupuk kandang</em>) processing</strong> methods for local farmers.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Photo documentation grid -->
+                <div class="grid grid-cols-2 gap-4">
+
+                    <!-- Tall feature photo (spans 2 rows) -->
+                    <figure class="relative row-span-2 overflow-hidden rounded-2xl border border-slate-100 shadow-sm bg-slate-200 min-h-[16rem]">
+                        <!-- INSERT KKN PHOTO 1 HERE -->
+                        <img src="images/kkn-water-filtration.jpg" alt="Multi-stage vertical water filtration tower built from bottles and buckets on a wooden frame" class="absolute inset-0 w-full h-full object-cover object-center" loading="lazy">
+                        <figcaption class="absolute inset-x-0 bottom-0 p-3 text-xs font-medium text-white bg-gradient-to-t from-slate-900/80 to-transparent">Integrated water filtration system</figcaption>
+                    </figure>
+
+                    <figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-100 shadow-sm bg-slate-200">
+                        <!-- INSERT KKN PHOTO 2 HERE -->
+                        <img src="images/kkn-fertilizer-practice.jpg" alt="Community members and student volunteers mixing organic fertilizer materials in a hands-on workshop" class="absolute inset-0 w-full h-full object-cover" style="object-position:center 55%" loading="lazy">
+                        <figcaption class="absolute inset-x-0 bottom-0 p-3 text-xs font-medium text-white bg-gradient-to-t from-slate-900/80 to-transparent">Organic fertilizer workshop</figcaption>
+                    </figure>
+
+                    <figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-100 shadow-sm bg-slate-200">
+                        <!-- INSERT KKN PHOTO 3 HERE -->
+                        <img src="images/kkn-fertilizer-socialization.jpg" alt="Presenting the organic fertilizer production steps to local residents using a projector" class="absolute inset-0 w-full h-full object-cover" style="object-position:center 45%" loading="lazy">
+                        <figcaption class="absolute inset-x-0 bottom-0 p-3 text-xs font-medium text-white bg-gradient-to-t from-slate-900/80 to-transparent">Fertilizer socialization session</figcaption>
+                    </figure>
+
+                    <figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-100 shadow-sm bg-slate-200">
+                        <!-- INSERT KKN PHOTO 4 HERE -->
+                        <img src="images/kkn-mini-chemeng-elementary.jpg" alt="Elementary school students watching a colored liquid density experiment during the Mini ChemEng Project" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+                        <figcaption class="absolute inset-x-0 bottom-0 p-3 text-xs font-medium text-white bg-gradient-to-t from-slate-900/80 to-transparent">Mini ChemEng: elementary school</figcaption>
+                    </figure>
+
+                    <figure class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-100 shadow-sm bg-slate-200">
+                        <!-- INSERT KKN PHOTO 5 HERE -->
+                        <img src="images/kkn-mini-chemeng-students.jpg" alt="Explaining a chemistry demonstration to a group of students using a tablet and a bottle experiment" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+                        <figcaption class="absolute inset-x-0 bottom-0 p-3 text-xs font-medium text-white bg-gradient-to-t from-slate-900/80 to-transparent">Science demonstration for students</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- ============ Category 2: Community Education & Public Relations ============ -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+
+                <!-- Description card (shown first on mobile, right side on desktop) -->
+                <div class="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 relative overflow-hidden lg:order-2">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-accent"></div>
+                    <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-accent mb-6 text-xl">
+                        <i class="fas fa-people-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-6">Community Education & Public Relations</h3>
+                    <ul class="space-y-4 text-sm text-slate-700 leading-relaxed">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Managed <strong>thematic Islamic communication campaigns</strong> by designing educational posters for the Baiturrahman Mosque bulletin board.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Conducted <strong>Quranic literacy programs (Iqro)</strong> for children at the Baiturrahman Mosque TPA.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Coached and mentored children for regional Islamic cultural competitions (<strong>FASI</strong>: Tilawah, Azan, and Speech).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-secondary mt-1 mr-3"></i>
+                            <span>Facilitated <strong>basic religious education and literacy classes</strong> for new Muslim converts (Mualaf).</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Photo documentation grid -->
+                <div class="grid grid-cols-2 gap-4 lg:order-1">
+
+                    <!-- Tall feature photo: poster -->
+                    <figure class="relative row-span-2 overflow-hidden rounded-2xl border border-slate-100 shadow-sm bg-slate-200 min-h-[16rem]">
+                        <!-- INSERT KKN PHOTO 6 HERE -->
+                        <img src="images/kkn-mosque-poster.jpg" alt="Educational poster designed for the Baiturrahman Mosque bulletin board encouraging learning and teaching the Quran" class="absolute inset-0 w-full h-full object-cover object-top" loading="lazy">
+                        <figcaption class="absolute inset-x-0 bottom-0 p-3 text-xs font-medium text-white bg-gradient-to-t from-slate-900/80 to-transparent">Mosque bulletin board poster</figcaption>
+                    </figure>
+
+                    <figure class="relative aspect-[3/2] overflow-hidden rounded-2xl border border-slate-100 shadow-sm bg-slate-200">
+                        <!-- INSERT KKN PHOTO 7 HERE -->
+                        <img src="images/kkn-iqro-tpa.jpg" alt="Teaching Iqro Quranic literacy one-on-one to a child at the Baiturrahman Mosque TPA" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+                        <figcaption class="absolute inset-x-0 bottom-0 p-3 text-xs font-medium text-white bg-gradient-to-t from-slate-900/80 to-transparent">Iqro class at the TPA</figcaption>
+                    </figure>
+
+                    <figure class="relative aspect-[3/2] overflow-hidden rounded-2xl border border-slate-100 shadow-sm bg-slate-200">
+                        <!-- INSERT KKN PHOTO 8 HERE -->
+                        <img src="images/kkn-mualaf-class.jpg" alt="Small-group Quran reading and literacy class for new Muslim converts" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+                        <figcaption class="absolute inset-x-0 bottom-0 p-3 text-xs font-medium text-white bg-gradient-to-t from-slate-900/80 to-transparent">Mualaf literacy class</figcaption>
+                    </figure>
+
+                    <figure class="relative col-span-2 aspect-[16/9] overflow-hidden rounded-2xl border border-slate-100 shadow-sm bg-slate-200">
+                        <!-- INSERT KKN PHOTO 9 HERE -->
+                        <img src="images/kkn-fasi-coaching.jpg" alt="Tilawah study materials and a tablet set up in the mosque for FASI competition coaching" class="absolute inset-0 w-full h-full object-cover" style="object-position:center 62%" loading="lazy">
+                        <figcaption class="absolute inset-x-0 bottom-0 p-3 text-xs font-medium text-white bg-gradient-to-t from-slate-900/80 to-transparent">FASI coaching preparation</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- =================== END COMMUNITY SERVICE (KKN) SECTION =================== -->
+
     <!-- Experience & Volunteer Section -->
     <section id="experience" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -377,6 +542,7 @@
                                     <li>Spearheaded fertilizer optimization, mini chem-eng projects, water filtration for heavy metals, and groundwater mapping.</li>
                                     <li>Ensured 100% program completion solving logistical on-site challenges.</li>
                                 </ul>
+                                <a href="#community" class="inline-block mt-4 text-sm font-medium text-primary hover:text-secondary transition-colors">View project documentation <i class="fas fa-arrow-right ml-1 text-xs"></i></a>
                             </div>
                         </div>
 
