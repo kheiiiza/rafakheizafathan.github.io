@@ -315,14 +315,7 @@ footer::before{animation:breathe 9s ease-in-out infinite alternate}
 /* INTERACTIVE */
 .calm *,.calm *::before,.calm *::after{animation:none!important;transition:none!important}
 .calm .rise>*,.calm .rv,.calm .ph{opacity:1!important;transform:none!important;clip-path:none!important}
-.calm .curve .line{stroke-dashoffset:0}.calm .cglow,.calm .spark,.calm .marq{display:none}
-.cglow{position:fixed;left:0;top:0;width:560px;height:560px;margin:-280px 0 0 -280px;border-radius:50%;background:radial-gradient(circle,rgba(139,148,255,.17),rgba(177,140,255,.06) 45%,transparent 68%);pointer-events:none;z-index:0;will-change:transform}
-.marq{overflow:hidden;border-block:1px solid var(--line);padding:20px 0;background:rgba(139,148,255,.04);position:relative}
-.mq-track{display:flex;align-items:center;gap:34px;width:max-content;will-change:transform;white-space:nowrap}
-.mq-track span{font:800 clamp(28px,4.2vw,56px)/1 var(--serif);letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1px rgba(232,234,246,.45);transition:color .3s,-webkit-text-stroke-color .3s}
-.mq-track span:hover{color:#8F96FF;-webkit-text-stroke-color:#8F96FF}
-.mq-track i{width:12px;height:12px;background:linear-gradient(135deg,#8F96FF,#C4A8FF);transform:rotate(45deg);flex:none}
-.tl{position:relative}
+.calm .curve .line{stroke-dashoffset:0}.calm .cglow,.calm .spark,.calm .tl{position:relative}
 .tl::after{content:"";position:absolute;left:-1px;top:0;width:2px;height:var(--tp,0%);background:linear-gradient(#8F96FF,#C4A8FF);box-shadow:0 0 12px #8F96FF}
 .ph img{transform:translateY(var(--py,0px)) scale(1.14)}
 .ph:hover img{transform:translateY(var(--py,0px)) scale(1.22)}
@@ -714,11 +707,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   const fine=matchMedia('(pointer:fine)').matches;
   const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
   const cg=document.createElement('div');cg.className='cglow';document.body.appendChild(cg);
-  const mq=document.createElement('div');mq.className='marq';mq.setAttribute('aria-hidden','true');
-  const MW=['Process Engineering','Data Science','Python','ASPEN Plus & Hysys','Operator Training Simulator','Leadership'];
-  mq.innerHTML='<div class="mq-track">'+MW.map(w=>'<span>'+w+'</span><i></i>').join('').repeat(4)+'</div>';
-  home.after(mq);
-  const track=mq.firstChild;let mqx=0,mqv=0,lastY=scrollY;
   const M={x:innerWidth/2,y:innerHeight/2,nx:0,ny:0,gx:innerWidth/2,gy:innerHeight/2};
   addEventListener('pointermove',e=>{M.x=e.clientX;M.y=e.clientY;M.nx=e.clientX/innerWidth*2-1;M.ny=e.clientY/innerHeight*2-1},{passive:true});
   const frame=$('.portrait .frame')[0],h1=$('.hero h1')[0];
@@ -752,10 +740,6 @@ document.addEventListener('DOMContentLoaded',()=>{
         if(h1&&fine)h1.style.transform='translate('+(M.nx*-10)+'px,'+(M.ny*-6)+'px)';
         if(cv&&fine)cv.style.transform='translate('+(M.nx*16)+'px,'+(M.ny*8)+'px)';
       }
-      const dy=scrollY-lastY;lastY=scrollY;mqv+=(dy*.45-mqv)*.1;
-      mqx-=(.7+mqv);const W=track.scrollWidth/4;
-      if(mqx<=-W)mqx+=W;if(mqx>0)mqx-=W;
-      track.style.transform='translateX('+mqx+'px)';
     }
     requestAnimationFrame(loop)})();
   /* scroll loop */
