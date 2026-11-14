@@ -140,7 +140,7 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(7,8,13,.72);backd
 .pdf-fb .btn{padding:10px 18px;font-size:12.5px}
 
 /* SUPPORTING PROJECTS GRID */
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:24px}
 .proj-card{border:1px solid var(--line);border-radius:18px;background:var(--bg2);padding:26px 26px 22px;display:flex;flex-direction:column;justify-content:space-between;transition:border-color .4s,transform .3s var(--ease),background .4s;transform-style:preserve-3d}
 .proj-card:hover{border-color:rgba(139,148,255,.55);background:#12152B}
 .proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:20px}
@@ -150,9 +150,13 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(7,8,13,.72);backd
 .proj-card h4{font-size:20px;margin-bottom:12px;color:var(--ink)}
 .proj-card p{font-size:14.5px;color:var(--soft);line-height:1.65;margin-bottom:22px}
 .proj-card p strong{color:var(--ink);font-weight:600}
-.proj-foot{display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--soft)}
+.proj-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding-top:14px;border-top:1px solid var(--line);font-size:12.5px;color:var(--soft)}
 .proj-foot i{color:var(--green);margin-right:6px}
 .proj-foot b{color:var(--green);font-weight:600}
+.proj-links{display:flex;gap:12px;align-items:center}
+.proj-links button,.proj-links a{background:none;border:0;padding:0;font:600 12.5px var(--sans);color:var(--green);cursor:pointer;display:inline-flex;align-items:center;gap:5px;transition:color .25s}
+.proj-links button i,.proj-links a i{margin-right:0}
+.proj-links button:hover,.proj-links a:hover{color:#fff}
 
 /* MODAL */
 .modal{position:fixed;inset:0;z-index:60;display:none;align-items:center;justify-content:center;padding:clamp(12px,3vw,32px);background:rgba(0,0,0,.8);backdrop-filter:blur(6px)}
@@ -378,7 +382,7 @@ footer::before{animation:breathe 9s ease-in-out infinite alternate}
     <div class="rise">
       <span class="badge">Chemical Engineering Student</span>
       <h1>Hi, I'm <em>Rafa Kheiza Fathan</em></h1>
-      <p class="lead">Final-year Chemical Engineering student at Gadjah Mada University. Bridging the gap between <strong>Process Simulation</strong>, <strong>AutoCAD Drafting</strong>, and <strong>Data Science</strong> to optimize engineering workflows.</p>
+      <p class="lead">Final-year Chemical Engineering student at Gadjah Mada University. Bridging the gap between <strong>Process Simulation</strong>, <strong>AutoCAD Plant 3D</strong>, and <strong>Data Science</strong> to optimize engineering workflows.</p>
       <div class="cta">
         <a href="#contact" class="btn solid"><i class="far fa-envelope"></i> Contact Me</a>
         <a href="#project" class="btn"><i class="fas fa-code"></i> View Projects</a>
@@ -407,7 +411,7 @@ footer::before{animation:breathe 9s ease-in-out infinite alternate}
       <div>
         <h3>Personal Summary</h3>
         <p>I am a Final-year Chemical Engineering student at Gadjah Mada University with core research and industrial interests in <strong>particulate processing, minerals, ceramics technology, and the energy sector</strong>.</p>
-        <p>Adaptable and results-driven, I combine <strong>process simulation and data science</strong> with <strong>AutoCAD technical drafting and visual communication</strong> to translate complex engineering systems into clear, actionable designs. I have a proven track record of developing technical rigor and managerial leadership through certified training, engineering projects, and student organizations.</p>
+        <p>Adaptable and results-driven, I combine <strong>process simulation and data science</strong> with <strong>AutoCAD Plant 3D equipment modeling and visual communication</strong> to translate complex engineering systems into clear, actionable designs. I have a proven track record of developing technical rigor and managerial leadership through certified training, engineering projects, and student organizations.</p>
       </div>
       <div>
         <h3>Education</h3>
@@ -444,7 +448,7 @@ footer::before{animation:breathe 9s ease-in-out infinite alternate}
         <div class="ico"><i class="fas fa-drafting-compass"></i></div>
         <h3>CAD &amp; Visual Design</h3>
         <ul>
-          <li><i class="fas fa-ruler-combined"></i><span>AutoCAD (2D/3D PFD &amp; P&amp;ID Drafting)</span></li>
+          <li><i class="fas fa-ruler-combined"></i><span>AutoCAD Plant 3D (Equipment &amp; Ortho CAD)</span></li>
           <li><i class="fas fa-paint-brush"></i><span>Graphic &amp; Motion Design (Canva, Affinity)</span></li>
           <li><i class="fas fa-network-wired"></i><span>OPC-UA / MQTT (SCADA Protocols)</span></li>
           <li><i class="fas fa-file-excel"></i><span>Advanced Excel Engineering Sheets</span></li>
@@ -467,7 +471,7 @@ footer::before{animation:breathe 9s ease-in-out infinite alternate}
 <!-- Featured & Supporting Projects -->
 <section id="project" class="sec">
   <div class="wrap">
-    <div class="sec-head"><span class="mark">Research</span><h2>Project Highlights</h2><p>Process Simulation, CAD Drafting &amp; Science Communication</p></div>
+    <div class="sec-head"><span class="mark">Research</span><h2>Project Highlights</h2><p>Process Simulation, AutoCAD Plant 3D &amp; Science Communication</p></div>
 
     <!-- Flagship Project #1 -->
     <div class="lab">
@@ -496,7 +500,7 @@ footer::before{animation:breathe 9s ease-in-out infinite alternate}
       <div class="poster">
         <div class="poster-bar">
           <span><i class="fas fa-file-pdf"></i> Research Poster Preview</span>
-          <button type="button" onclick="openPosterModal()">Expand <i class="fas fa-up-right-and-down-left-from-center"></i></button>
+          <button type="button" onclick="openDocModal('ots-ammonia-poster.pdf','Research Poster — Ammonia Plant Front-End OTS')">Expand <i class="fas fa-up-right-and-down-left-from-center"></i></button>
         </div>
         <div class="pdf">
           <object data="ots-ammonia-poster.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH" type="application/pdf">
@@ -513,39 +517,26 @@ footer::before{animation:breathe 9s ease-in-out infinite alternate}
 
     <!-- Supporting Projects Grid -->
     <div class="proj-grid">
-      <!-- Project #2: AutoCAD & Process Design -->
+      <!-- Project #2: AutoCAD Plant 3D Pressure Vessel -->
       <article class="proj-card">
         <div>
           <div class="proj-top">
             <div class="proj-ico"><i class="fas fa-drafting-compass"></i></div>
-            <div class="proj-pills"><span>AutoCAD</span><span>Aspen Plus</span></div>
+            <div class="proj-pills"><span>AutoCAD Plant 3D</span><span>3D &amp; Ortho CAD</span></div>
           </div>
-          <h4>100,000 TPA Acetone Plant Design &amp; P&amp;ID Drafting</h4>
-          <p>Executed steady-state flowsheet simulation, mass/energy balances, and unit sizing in Aspen Plus/HYSYS, translated into standardized <strong>Process Flow Diagrams (PFD)</strong> and <strong>P&amp;IDs</strong> using AutoCAD.</p>
+          <h4>3D Modeling &amp; Orthographic Drafting of Horizontal Pressure Vessel</h4>
+          <p>Modeled a 3D horizontal cylindrical pressure vessel featuring dished heads, twin saddle supports, flanged top nozzle, drain port, and nameplate pad in <strong>AutoCAD Plant 3D</strong>, complete with dimensioned <strong>2D orthographic and isometric fabrication drawings</strong>.</p>
         </div>
         <div class="proj-foot">
-          <span><i class="fas fa-layer-group"></i>PFD, P&amp;ID &amp; Plant Layout</span>
-          <b>CAD Portfolio</b>
+          <span><i class="fas fa-cube"></i>Equipment CAD</span>
+          <div class="proj-links">
+            <button type="button" onclick="openDocModal('Pressure Vessel_Rafa.pdf','AutoCAD Plant 3D — Horizontal Pressure Vessel Orthographic Drawing')"><i class="fas fa-expand"></i> Ortho PDF</button>
+            <button type="button" onclick="openDocModal('Rafa_523345.pdf','AutoCAD Plant 3D — Horizontal Pressure Vessel 3D Model')"><i class="fas fa-cube"></i> 3D View</button>
+          </div>
         </div>
       </article>
 
-      <!-- Project #3: Undergraduate Research -->
-      <article class="proj-card">
-        <div>
-          <div class="proj-top">
-            <div class="proj-ico"><i class="fas fa-flask"></i></div>
-            <div class="proj-pills"><span>Python / SciPy</span><span>Kinetics</span></div>
-          </div>
-          <h4>Kinetic Analysis of Iron Ore Reduction Using Urea</h4>
-          <p>Investigating solid-state reaction kinetics of iron ore reduction with urea as an alternative reductant. Applied <strong>Python (SciPy/NumPy)</strong> for non-linear regression, rate-constant fitting, and activation energy estimation.</p>
-        </div>
-        <div class="proj-foot">
-          <span><i class="fas fa-chart-line"></i>Extractive Metallurgy</span>
-          <b>UGM Lab Research</b>
-        </div>
-      </article>
-
-      <!-- Project #4: Science Communication & Motion Graphics -->
+      <!-- Project #3: Science Communication & Motion Graphics -->
       <article class="proj-card">
         <div>
           <div class="proj-top">
@@ -564,17 +555,17 @@ footer::before{animation:breathe 9s ease-in-out infinite alternate}
   </div>
 </section>
 
-<!-- Poster Lightbox Modal -->
+<!-- Document / Poster Lightbox Modal -->
 <div id="poster-modal" class="modal" aria-hidden="true">
   <div class="modal-box">
     <div class="modal-top">
-      <h4><i class="fas fa-file-pdf"></i> Research Poster — Ammonia Plant Front-End OTS</h4>
+      <h4 id="modal-title"><i class="fas fa-file-pdf"></i> Research Poster — Ammonia Plant Front-End OTS</h4>
       <div class="act">
-        <a href="ots-ammonia-poster.pdf" download><i class="fas fa-download"></i> Download</a>
+        <a id="modal-download" href="ots-ammonia-poster.pdf" download><i class="fas fa-download"></i> Download</a>
         <button type="button" id="close-poster-btn" aria-label="Close modal"><i class="fas fa-times"></i></button>
       </div>
     </div>
-    <iframe src="ots-ammonia-poster.pdf#view=FitH" title="Ammonia Plant OTS Research Poster"></iframe>
+    <iframe id="modal-frame" src="ots-ammonia-poster.pdf#view=FitH" title="Document Preview"></iframe>
   </div>
 </div>
 
@@ -709,7 +700,7 @@ footer::before{animation:breathe 9s ease-in-out infinite alternate}
     <div class="foot">
       <div>
         <h2>Rafa Kheiza Fathan</h2>
-        <p class="about">Chemical Engineering Student passionate about process simulation, AutoCAD drafting, data science, and leadership.</p>
+        <p class="about">Chemical Engineering Student passionate about process simulation, AutoCAD Plant 3D, data science, and leadership.</p>
       </div>
       <div>
         <h3>Get In Touch</h3>
@@ -731,7 +722,14 @@ footer::before{animation:breathe 9s ease-in-out infinite alternate}
 </footer>
 
 <script>
-function openPosterModal(){document.getElementById('poster-modal').classList.add('open');document.body.style.overflow='hidden'}
+function openDocModal(src,title){
+  document.getElementById('modal-frame').src=encodeURI(src)+'#view=FitH';
+  document.getElementById('modal-title').innerHTML='<i class="fas fa-file-pdf"></i> '+title;
+  document.getElementById('modal-download').href=src;
+  document.getElementById('poster-modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function openPosterModal(){openDocModal('ots-ammonia-poster.pdf','Research Poster — Ammonia Plant Front-End OTS')}
 function closePosterModal(){document.getElementById('poster-modal').classList.remove('open');document.body.style.overflow=''}
 document.addEventListener('DOMContentLoaded',()=>{
   const $=(q,r=document)=>[...r.querySelectorAll(q)];
