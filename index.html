@@ -218,6 +218,10 @@ nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(7,8,13,.72);backd
 .tl-item ul{list-style:disc;margin-left:18px;font-size:14.5px;color:var(--soft)}
 .tl-item li{margin-bottom:6px;padding-left:4px}
 .tl-item li::marker{color:var(--green)}
+.tl-item li strong{color:var(--ink);font-weight:600}
+.tl-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.tl-photos .ph{border-radius:12px}
+.tl-photos .ph figcaption{padding:20px 10px 8px;font-size:11px;line-height:1.3}
 .more{display:inline-block;margin-top:14px;font-size:14px;font-weight:600;color:var(--green);border-bottom:1px solid rgba(139,148,255,.5);transition:letter-spacing .4s var(--ease)}
 .more:hover{letter-spacing:.03em}
 .org-card{border:1px solid var(--line);border-radius:14px;background:var(--bg2);padding:22px 24px 20px;margin-bottom:14px;transition:border-color .4s}
@@ -261,7 +265,7 @@ footer .wrap{position:relative}
   .facts{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){
-  .facts,.specs,.units ol{grid-template-columns:1fr}
+  .facts,.specs,.units ol,.tl-photos{grid-template-columns:1fr}
   .specs div{border-right:0}.specs div:nth-last-child(2){border-bottom:1px solid var(--line)}
   .edu{grid-template-columns:1fr}
   .btn{width:100%;justify-content:center}
@@ -439,7 +443,7 @@ footer::before{animation:breathe 9s ease-in-out infinite alternate}
         <h3>Engineering &amp; Modeling</h3>
         <ul>
           <li><i class="fab fa-python"></i><span>Python (NumPy, SciPy, Matplotlib)</span></li>
-          <li><i class="fas fa-industry"></i><span>ASPEN Plus </span></li>
+          <li><i class="fas fa-industry"></i><span>ASPEN Plus</span></li>
           <li><i class="fas fa-project-diagram"></i><span>Dynamic Process Simulation (OTS)</span></li>
           <li><i class="fas fa-chart-pie"></i><span>Kinetic &amp; Numerical Data Analysis</span></li>
         </ul>
@@ -635,6 +639,15 @@ footer::before{animation:breathe 9s ease-in-out infinite alternate}
         <h3><i class="fas fa-briefcase"></i> Leadership &amp; Operations</h3>
         <div class="tl">
           <div class="tl-item">
+            <span class="date">Sep 2026 - Present</span>
+            <h4>Public Speaking Instructor</h4>
+            <p class="org">Wisma Muslim Yogyakarta</p>
+            <ul>
+              <li>Trusted as a <strong>Public Speaking Instructor</strong> for university students, driven by a formal competency certification from <strong>KAGAMA</strong>.</li>
+              <li>Fully responsible for designing and executing professional training programs aimed at transforming students into <strong>impactful, articulate, and confident communicators</strong> in today's digital era.</li>
+            </ul>
+          </div>
+          <div class="tl-item">
             <span class="date">Jun 2026 - Aug 2026</span>
             <h4>Sub-Unit Student Coordinator</h4>
             <p class="org">Community Service Program (KKN-PPM UGM 2026)</p>
@@ -655,6 +668,22 @@ footer::before{animation:breathe 9s ease-in-out infinite alternate}
               <li>Developed standardized visual templates using Canva and Affinity to maintain consistent branding and high readability.</li>
               <li>Collaborated with program committees to distill complex lecture themes into structured visual layouts under tight deadlines.</li>
             </ul>
+          </div>
+          <div class="tl-item">
+            <span class="date">Oct 2025</span>
+            <h4>Project Lead — Leadership Development Program</h4>
+            <p class="org">Subdirectorate of Student Character Development, UGM</p>
+            <ul>
+              <li>Selected as <strong>1 of 5 UGM students</strong> to lead a community impact project backed by <strong>IDR 3.9 million</strong> in institutional funding.</li>
+              <li>Managed a cross-disciplinary team (Chemical Engineering, Management, and Arabic Literature) to execute a <strong>First Aid &amp; Emergency Response Workshop</strong> covering CPR, choking, and drowning response.</li>
+              <li>Presented project outcomes, budget accountability, and impact metrics to program mentors and student peers at FMIPA UGM.</li>
+            </ul>
+            <div class="tl-photos">
+              <figure class="ph r43"><img src="leadership-presentation.jpg" alt="Presenting First Aid Workshop project outcomes at FMIPA UGM" style="object-position:center 25%" loading="lazy"><figcaption>Final project presentation at FMIPA UGM</figcaption></figure>
+              <figure class="ph r43"><img src="first-aid-cpr.jpg" alt="Participants practicing hands-on CPR on a resuscitation manikin during the First Aid Workshop" style="object-position:center 55%" loading="lazy"><figcaption>Hands-on CPR &amp; emergency practice</figcaption></figure>
+              <figure class="ph r43"><img src="first-aid-plaque.jpg" alt="Presenting an appreciation plaque to the First Aid Workshop instructor" style="object-position:center 25%" loading="lazy"><figcaption>Speaker appreciation handover</figcaption></figure>
+            </div>
+            <a href="https://www.linkedin.com/posts/rafakheizafathan_leadership-ugm-communityimpact-activity-7379283962310905856-YjiS" target="_blank" rel="noopener noreferrer" class="more">View LinkedIn post &amp; documentation <i class="fas fa-arrow-right"></i></a>
           </div>
           <div class="tl-item">
             <span class="date">Jun 2025 - Present</span>
